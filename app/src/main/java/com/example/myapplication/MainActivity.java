@@ -11,11 +11,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editName = findViewById(R.id.name);
-    EditText editSurname = findViewById(R.id.surname);
-    EditText editEmail = findViewById(R.id.email);
-    EditText editPassword = findViewById(R.id.password);
-    Button btnRegister = findViewById(R.id.registerBtn);
+    private EditText editName;
+    private EditText editSurname;
+    private EditText editEmail;
+    private EditText editPassword;
+    private Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        editName = findViewById(R.id.name);
+        editSurname = findViewById(R.id.surname);
+        editEmail = findViewById(R.id.email);
+        editPassword = findViewById(R.id.password);
+        btnRegister = findViewById(R.id.registerBtn);
+
 
         btnRegister.setOnClickListener(v -> {
             if (!checkValues()) {
